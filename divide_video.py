@@ -2,7 +2,14 @@ import time
 import cv2
 import os
 from termcolor import colored
+import random
+import string
 
+def get_random_string(length):
+    # choose from all lowercase letter
+    letters = string.ascii_lowercase
+    result_str = ''.join(random.choice(letters) for i in range(length))
+    return result_str
 
 def create_folder_for_frames(path):
     # Cutting .mp4 as folder should be only name of file.
@@ -41,14 +48,17 @@ def divide_video_into_frames(path):
     # VideoCapture() takes filename as argument or you can type device index.
     captured_video = cv2.VideoCapture(path)
 
+    # Random string seed:
+    string_seed = get_random_string(6)
     while True:
         # Getting frame from video.
         # This function returns 2 variables: 1. is flag if frame was read correctly, 2. is frame
         success, frame = captured_video.read()
 
+
         # Save the photo as consecutive numbers.
         if success:
-            cv2.imwrite(folder_path+"/frames/"+str(number_of_frame)+".jpg", frame)
+            cv2.imwrite(folder_path+"/frames/"+str(string_seed)+str(number_of_frame)+".jpg", frame)
             number_of_frame += 1
         elif not success:
             final_info = f"Process done (this took {round((time.time() - start_time), 2)} seconds), created {number_of_frame} frames from video in folder: {folder_path+'/before/'}"
