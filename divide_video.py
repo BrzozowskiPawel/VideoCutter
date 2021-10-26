@@ -5,11 +5,13 @@ from termcolor import colored
 import random
 import string
 
+
 def get_random_string(length):
     # choose from all lowercase letter
     letters = string.ascii_lowercase
     result_str = ''.join(random.choice(letters) for i in range(length))
     return result_str
+
 
 def create_folder_for_frames(path):
     # Cutting .mp4 as folder should be only name of file.
