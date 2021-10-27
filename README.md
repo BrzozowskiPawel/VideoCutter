@@ -45,11 +45,12 @@ Please keep in mind that every single frame will be named in this convention: </
 ```<random string seed><frame number>.jpg``` </br> 
 This helps to put all files from output directly into for example roboflow without name conflict. </br> </br>
 
-Please tak a look on program at work: </br>
+Please take a look on program at work: </br>
 
 <img src="readme_files/save_HD.gif" alt="save" width="814"/> </br>
 Also when programming detect that it already have converted this movie, it won't do it again. </br>
 If you still want to convert it again, please took off/delete this frame from output folder. </br>
+
 <img src="readme_files/no_vid_to_save_HD.gif" alt="no_vid_to_save" width="814"/> </br>
 
 ## How to use program
