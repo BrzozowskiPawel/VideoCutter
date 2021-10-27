@@ -1,6 +1,6 @@
 # Face Anonymization
 
-Python script that helps to convert the movie into a set of frames. Just use 1 command and convert all movies you put into the input folder into frames. </br> This is that easy.
+Python script that helps to convert the movie into a set of frames. </br> Just use 1 command and convert all movies you put into the input folder into frames. </br> THIS IS THAT EASY.
 
 ## Table of Contents
 
