@@ -23,7 +23,7 @@ Below I present a free video from [pexels](https://www.pexels.com/pl-pl/) as exa
 
 The results obtained after starting the program are displayed here:
 <br />
-<img src="readme_files/result_HD.gif" alt="result" width="734"/>
+<img src="readme_files/result_HD.gif" alt="result"/>
 
 ## Installation
 1. Clone the repository.
@@ -46,10 +46,10 @@ Please keep in mind that every single frame will be named in this convention: </
 
 Please tak a look on program at work: </br>
 
-<img src="readme_files/save.gif" alt="save" width="814"/> </br>
+<img src="readme_files/save_HD.gif" alt="save" width="814"/> </br>
 Also when programming detect that it already have converted this movie, it won't do it again. </br>
 If you still want to convert it again, please took off/delete this frame from output folder. </br>
-<img src="readme_files/no_vid_to_save.gif" alt="no_vid_to_save" width="814"/> </br>
+<img src="readme_files/no_vid_to_save_HD.gif" alt="no_vid_to_save" width="814"/> </br>
 
 ## How to use program
 As shown on videos before put all videos that you want to divide into frames <b>input</b> folder. 
