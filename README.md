@@ -19,7 +19,7 @@ The main goal of this project was to make this as simple to use as possible - yo
 
 ## Demo
 Below I present a free video from [pexels](https://www.pexels.com/pl-pl/) as example input video: </br>
-<img src="readme_files/movie.mp4" alt="movie" width="734"/>
+<img src="readme_files/movie.gif" alt="movie" width="734"/>
 
 The results obtained after starting the program are displayed here:
 <br />
