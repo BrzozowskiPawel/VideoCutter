@@ -16,8 +16,9 @@ list_of_files = list_of_files.get_list_of_files()
 # Display information regarding how many files will be exposed to the program.
 message_how_many_files = f'{len(list_of_files)} new files to blur faces and slice into frames.'
 print(colored(message_how_many_files,'yellow'))
-print(list_of_files)
-
+if len(list_of_files) > 0:
+    print(list_of_files)
+    print(colored('Please wait, application is running.', 'magenta'))
 
 if len(list_of_files) > 0:
     for file in list_of_files:
@@ -25,7 +26,7 @@ if len(list_of_files) > 0:
         folder_path = divide_video.divide_video_into_frames(file)
 
 elif len(list_of_files) == 0:
-    print(colored("There is no new videos (mp4) to blur and slice.", 'red'))
+    print(colored("There is no new videos (mp4) to blur and slice. Check your output folder.", 'red'))
     # If there is no new videos, code 20.
     exit(20)
 

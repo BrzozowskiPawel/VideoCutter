@@ -20,7 +20,7 @@ def create_folder_for_frames(path):
 
     # Declaration of constants that are paths.
     MYDIR = "output/"+folder_path
-    MYDIR_before = "output/"+folder_path+"/frames"
+    MYDIR_before = "output/"+folder_path
     CHECK_FOLDER = os.path.isdir(MYDIR)
 
     # If folder doesn't exist, then create it (and subfolders).
@@ -60,10 +60,10 @@ def divide_video_into_frames(path):
 
         # Save the photo as consecutive numbers.
         if success:
-            cv2.imwrite(folder_path+"/frames/"+str(string_seed)+str(number_of_frame)+".jpg", frame)
+            cv2.imwrite(folder_path+"/"+str(string_seed)+str(number_of_frame)+".jpg", frame)
             number_of_frame += 1
         elif not success:
-            final_info = f"Process done (this took {round((time.time() - start_time), 2)} seconds), created {number_of_frame} frames from video in folder: {folder_path+'/before/'}"
+            final_info = f"Process done (this took {round((time.time() - start_time), 2)} seconds), created {number_of_frame} frames from video in folder: {folder_path+'/'}"
             print(colored(final_info, 'green'))
             break
     return folder_path
