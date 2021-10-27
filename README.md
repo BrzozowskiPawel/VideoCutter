@@ -42,7 +42,8 @@ First, you have to put all videos that you want to divide into frames <b>input</
 
 The program creates an <b>output</b> folder. Then, for each file with the .mp4 extension. </br>
 Please keep in mind that every single frame will be named in this convention: </br>
-```<random string seed><frame number>.jpg``` </br> </br>
+```<random string seed><frame number>.jpg``` </br> 
+This helps to put all files from output directly into for example roboflow without name conflict. </br> </br>
 
 Please tak a look on program at work: </br>
 
