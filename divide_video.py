@@ -36,7 +36,13 @@ def create_folder_for_frames(path):
         exit(10)
 
 
-def divide_video_into_frames(path):
+def divide_video_into_frames(path, skipped = 5):
+    # Number of photos skipper to before saving
+    skipped_index = 0
+
+    # Number of photos saved
+    saved_photos = 0
+
     # Start counting the time it took to complete this function
     start_time = time.time()
 
@@ -57,13 +63,17 @@ def divide_video_into_frames(path):
         # This function returns 2 variables: 1. is flag if frame was read correctly, 2. is frame
         success, frame = captured_video.read()
 
-
         # Save the photo as consecutive numbers.
         if success:
-            cv2.imwrite(folder_path+"/"+str(string_seed)+str(number_of_frame)+".jpg", frame)
+            if skipped == skipped_index:
+                cv2.imwrite(folder_path+"/"+str(string_seed)+str(number_of_frame)+".jpg", frame)
+                saved_photos += 1
+                skipped_index = 0
             number_of_frame += 1
         elif not success:
-            final_info = f"Process done (this took {round((time.time() - start_time), 2)} seconds), created {number_of_frame} frames from video in folder: {folder_path+'/'}"
+            final_info = f"Process done (this took {round((time.time() - start_time), 2)} seconds), created {saved_photos} frames from video in folder: {folder_path+'/'}"
             print(colored(final_info, 'green'))
             break
+
+        skipped_index += 1
     return folder_path

@@ -23,7 +23,7 @@ if len(list_of_files) > 0:
 if len(list_of_files) > 0:
     for file in list_of_files:
         # Divide the movie into frames and save them in the specific folders
-        folder_path = divide_video.divide_video_into_frames(file)
+        folder_path = divide_video.divide_video_into_frames(file, skipped=5)
 
 elif len(list_of_files) == 0:
     print(colored("There is no new videos (mp4) to blur and slice. Check your output folder.", 'red'))
