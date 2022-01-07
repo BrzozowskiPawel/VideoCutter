@@ -17,6 +17,9 @@ print(colored(message,'blue'))
 # Thanks to this, you can send new files to the input directory without deleting the previously used ones.
 list_of_files = list_of_files.get_list_of_files()
 
+# Create output
+divide_video.create_folder_for_frames()
+
 # Display information regarding how many files will be exposed to the program.
 message_how_many_files = f'{len(list_of_files)} new files to blur faces and slice into frames.'
 print(colored(message_how_many_files,'yellow'))
@@ -39,5 +42,5 @@ elif len(list_of_files) == 0:
 message = f'Program ended {time.strftime("%H:%M:%S", time.localtime())}, this took: {round((time.time() - start_time),2)} seconds.'
 print(colored(message,'blue'))
 
-message = f'Saved total: {total_number_of_saved_photos} photos'
+message = f'Saved total: {total_number_of_saved_photos} photos, for all data see stats.csv'
 print(colored(message,'magenta'))

@@ -14,21 +14,16 @@ def get_random_string(length):
     return result_str
 
 
-def create_folder_for_frames(path):
-    # Cutting .mp4 as folder should be only name of file.
-    tmp = path.replace("input/","")
-    folder_path = tmp.replace(".mp4", "")
-
+def create_folder_for_frames():
     # Declaration of constants that are paths.
-    MYDIR = "output/"+folder_path
-    MYDIR_before = "output/"+folder_path
+    MYDIR = "output/ (files will be saved here)"
     CHECK_FOLDER = os.path.isdir(MYDIR)
 
     # If folder doesn't exist, then create it (and subfolders).
     if not CHECK_FOLDER:
-        if not os.path.isdir(MYDIR_before):
-            os.makedirs(MYDIR_before)
-        return MYDIR
+        if not os.path.isdir(MYDIR):
+            os.makedirs(MYDIR)
+            print(colored("Created output/", "green"))
 
     else:
         message = "folder already exists! -> Delete 'output' folder or single one that already exists: "+MYDIR
