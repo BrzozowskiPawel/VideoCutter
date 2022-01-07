@@ -3,6 +3,10 @@ from termcolor import colored
 
 import list_of_files
 import divide_video
+
+
+total_number_of_saved_photos = 0
+
 # Information about the program start (start time)
 start_time = time.time()
 message = f'Program started {time.strftime("%H:%M:%S", time.localtime())}'
@@ -23,7 +27,8 @@ if len(list_of_files) > 0:
 if len(list_of_files) > 0:
     for file in list_of_files:
         # Divide the movie into frames and save them in the specific folders
-        folder_path = divide_video.divide_video_into_frames(file, skipped=5)
+        number_of_saved_photos = divide_video.divide_video_into_frames(file, skipped=4)
+        total_number_of_saved_photos += number_of_saved_photos
 
 elif len(list_of_files) == 0:
     print(colored("There is no new videos (mp4) to blur and slice. Check your output folder.", 'red'))
@@ -33,3 +38,6 @@ elif len(list_of_files) == 0:
 # Information about the program end (end time)
 message = f'Program ended {time.strftime("%H:%M:%S", time.localtime())}, this took: {round((time.time() - start_time),2)} seconds.'
 print(colored(message,'blue'))
+
+message = f'Saved total: {total_number_of_saved_photos} photos'
+print(colored(message,'magenta'))
